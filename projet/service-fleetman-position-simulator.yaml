@@ -1,0 +1,14 @@
+apiVersion: v1
+Kind: Service
+metadata: 
+  name: fleetman-position-simulator
+  namespace: projet-kube
+spec:
+  selector:
+    app: fleetman-position-simulator
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
+

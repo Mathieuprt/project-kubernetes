@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+Kind: Deployment
+metadata: 
+  name: fleetman-position-tracker
+  namespace: projet-kube
+spec:
+  replicas: 2
+   selector:
+    matchLabels:
+      app: fleetman-position-tracker
+  template:
+    metadata:
+      labels:
+        app: fleetman-position-tracker
+    spec:
+      containers:
+      - name: fleetman-position-tracker
+        image: supinfo4kube/position-tracker:1.0.0
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: production-microservice
