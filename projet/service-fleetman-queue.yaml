@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-queue
+  labels:
+    app: fleetman
+    tier: queue
+spec:
+  type: ClusterIP
+  selector:
+    app: fleetman
+    tier: queue
+  ports:
+  - port: 8161
+    targetPort: 8161
+    name: http
+  - port: 61616
+    targetPort: 61616
+    name: amqp
