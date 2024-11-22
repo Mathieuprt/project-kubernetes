@@ -1,2 +1,6 @@
 # project-kubernetes
-Projet SUPINFO
+
+## ROADMAP 
+
+Chaque service correspond à un container. Il faut un déploiement par container.
+
