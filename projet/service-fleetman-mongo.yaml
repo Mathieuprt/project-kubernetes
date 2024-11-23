@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-mongodb
+  namespace: projet-kube
+spec:
+  ports:
+  - port: 27017
+    targetPort: 27017
+  selector:
+    app: fleetman-mongodb
+  type: ClusterIP
