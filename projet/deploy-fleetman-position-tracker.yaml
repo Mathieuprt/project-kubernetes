@@ -3,6 +3,8 @@ Kind: Deployment
 metadata: 
   name: fleetman-position-tracker
   namespace: projet-kube
+  labels:
+    app: fleetman-position-tracker
 spec:
   replicas: 2
    selector:

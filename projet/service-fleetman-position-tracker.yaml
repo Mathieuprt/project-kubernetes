@@ -3,6 +3,8 @@ Kind: Service
 metadata: 
   name: fleetman-position-tracker
   namespace: projet-kube
+  labels:
+    app: fleetman-position-tracker
 spec:
   selector:
     app: fleetman-position-tracker

@@ -3,6 +3,8 @@ Kind: Service
 metadata: 
   name: fleetman-position-simulator
   namespace: projet-kube
+  labels:
+    app: fleetman-position-simulator
 spec:
   selector:
     app: fleetman-position-simulator

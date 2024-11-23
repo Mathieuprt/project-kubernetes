@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: fleetman-mongodb
   namespace: projet-kube
+  labels:
+    app: fleetman-mongodb
 spec:
   replicas: 1
   selector:
