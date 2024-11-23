@@ -4,7 +4,7 @@ metadata:
   name: my-pvc
   namespace: projet-kube
   labels:
-    name: my-pvc
+    app: my-pvc
 spec:
   storageClassName: manual
   accessModes:

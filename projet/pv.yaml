@@ -4,7 +4,7 @@ metadata:
   name: my-pv
   namespace: projet-kube
   labels:
-    name: my-pv
+    app: my-pv
 spec:
   storageClassName: manual
   capacity:
