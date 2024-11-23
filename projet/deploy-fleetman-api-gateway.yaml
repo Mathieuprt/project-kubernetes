@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-api-gateway
+  namespace: projet-kube
   labels:
     app: fleetman-api-gateway
 spec:
