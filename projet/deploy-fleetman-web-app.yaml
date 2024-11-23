@@ -2,20 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-web-app
+  namespace: projet-kube
   labels:
-    app: fleetman
-    tier: web-app
+    app: fleetman-web-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman
-      tier: web-app
+      app: 
   template:
     metadata:
       labels:
-        app: fleetman
-        tier: web-app
+        app: fleetman-web-app
     spec:
       containers:
       - name: fleetman-web-app
