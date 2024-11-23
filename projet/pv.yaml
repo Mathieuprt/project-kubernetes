@@ -3,6 +3,8 @@ kind: PersistentVolume
 metadata:
   name: my-pv
   namespace: projet-kube
+  labels:
+    name: my-pv
 spec:
   storageClassName: manual
   capacity:
