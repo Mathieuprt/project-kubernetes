@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-Kind: Deployment
+kind: Deployment
 metadata: 
   name: fleetman-position-simulator
   namespace: projet-kube
@@ -7,7 +7,7 @@ metadata:
     app: fleetman-position-simulator
 spec:
   replicas: 2
-   selector:
+  selector:
     matchLabels:
       app: fleetman-position-simulator
   template:
@@ -21,6 +21,6 @@ spec:
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: production-microservice
-        dependsOn: 
-          - name: fleetman-queue
+        # dependsOn: 
+        #   - name: fleetman-queue
 

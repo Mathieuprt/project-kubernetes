@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 
+      app: fleetman-web-app
   template:
     metadata:
       labels:
@@ -20,9 +20,9 @@ spec:
         image: supinfo4kube/web-app:1.0.0
         ports:
         - containerPort: 80
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: "production-microservice"
+        # env:
+        # - name: SPRING_PROFILES_ACTIVE
+        #   value: "production-microservice"
         resources:
           limits:
             memory: "256Mi"
