@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: my-pvc
-  namespace: projet-kube
+  name: fleetman-mongo-pvc
+  namespace: fleetman
   labels:
-    app: my-pvc
+    app: fleetman-mongo-pvc
 spec:
-  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:

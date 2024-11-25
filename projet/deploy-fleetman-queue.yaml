@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-queue
-  namespace: projet-kube
+  namespace: fleetman
   labels:
     app: fleetman-queue
 spec:
@@ -17,11 +17,7 @@ spec:
     spec:
       containers:
       - name: fleetman-queue
-        image: supinfo4kube/queue:1.0.0
+        image: supinfo4kube/queue:1.0.1
         ports:
-        - containerPort: 8161 # Port pour l'interface Web ActiveMQ
-        - containerPort: 61616 # Port pour les connexions AMQP
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "1000m"
+        - containerPort: 8161
+        - containerPort: 61616
