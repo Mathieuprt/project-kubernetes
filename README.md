@@ -4,14 +4,6 @@
 
 Chaque service correspond à un container. Il faut un déploiement par container.
 
-curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg
-
-sudo tee /etc/apt/trusted.gpg.d/kubernetes-archive-keyring.gpg > /dev/null
-
-echo "deb [signed-by=/etc/apt/trusted.gpg.d/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" 
-
-sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-sudo apt-get update
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
 
