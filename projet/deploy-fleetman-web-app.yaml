@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-web-app
-  namespace: projet-kube
+  namespace: fleetman
   labels:
     app: fleetman-web-app
 spec:
@@ -20,10 +20,3 @@ spec:
         image: supinfo4kube/web-app:1.0.0
         ports:
         - containerPort: 80
-        # env:
-        # - name: SPRING_PROFILES_ACTIVE
-        #   value: "production-microservice"
-        resources:
-          limits:
-            memory: "256Mi"
-            cpu: "500m"

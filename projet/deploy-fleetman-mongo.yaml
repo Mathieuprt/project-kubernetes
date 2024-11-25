@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-mongodb
-  namespace: projet-kube
+  namespace: fleetman
   labels:
     app: fleetman-mongodb
 spec:
@@ -22,8 +22,8 @@ spec:
         - containerPort: 27017
         volumeMounts:
         - name: mongo-data
-          mountPath: /data/db 
+          mountPath: /data/db
       volumes:
       - name: mongo-data
         persistentVolumeClaim:
-          claimName: my-pvc
+          claimName: fleetman-mongo-pvc
