@@ -2,9 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-queue
-  namespace: fleetman
-  labels:
-    app: fleetman-queue
 spec:
   replicas: 1
   selector:
@@ -21,3 +18,6 @@ spec:
         ports:
         - containerPort: 8161
         - containerPort: 61616
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: production-microservice

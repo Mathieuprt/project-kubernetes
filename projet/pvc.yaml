@@ -1,10 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: fleetman-mongo-pvc
-  namespace: fleetman
-  labels:
-    app: fleetman-mongo-pvc
+  name: mongo-data-pvc
 spec:
   accessModes:
     - ReadWriteOnce

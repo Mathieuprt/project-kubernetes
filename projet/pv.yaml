@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: fleetman-mongo-pv
-  namespace: fleetman
-  labels:
-    type: local
-    app: fleetman-mongo-pv
+  name: mongo-pv
 spec:
   capacity:
     storage: 1Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
   hostPath:
-    path: /mnt/data/fleetman-mongo
+    path: /mnt/data/mongo

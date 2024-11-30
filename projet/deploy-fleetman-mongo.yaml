@@ -2,9 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-mongodb
-  namespace: fleetman
-  labels:
-    app: fleetman-mongodb
 spec:
   replicas: 1
   selector:
@@ -16,14 +13,14 @@ spec:
         app: fleetman-mongodb
     spec:
       containers:
-      - name: fleetman-mongodb
-        image: mongo:3.6.23
-        ports:
-        - containerPort: 27017
-        volumeMounts:
-        - name: mongo-data
-          mountPath: /data/db
+        - name: fleetman-mongodb
+          image: mongo:3.6.23
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-data  
       volumes:
-      - name: mongo-data
-        persistentVolumeClaim:
-          claimName: fleetman-mongo-pvc
+        - name: mongo-data    
+          persistentVolumeClaim:
+            claimName: mongo-data-pvc  
